@@ -1,0 +1,2665 @@
+{
+  "library": {
+    "annotation": [
+      {
+        "translatorOptions": "",
+        "type": "CqlToElmInfo"
+      }
+    ],
+    "identifier": {
+      "id": "MMR_Common_Library",
+      "version": "1"
+    },
+    "schemaIdentifier": {
+      "id": "urn:hl7-org:elm",
+      "version": "r1"
+    },
+    "usings": {
+      "def": [
+        {
+          "localIdentifier": "System",
+          "uri": "urn:hl7-org:elm-types:r1"
+        },
+        {
+          "localIdentifier": "FHIR",
+          "uri": "http://hl7.org/fhir",
+          "version": "4.0.1"
+        }
+      ]
+    },
+    "codeSystems": {
+      "def": [
+        {
+          "name": "CVX",
+          "id": "http://hl7.org/fhir/sid/cvx",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Snomed",
+          "id": "http://snomed.info/sct",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "ICD-10-CM",
+          "id": "http://hl7.org/fhir/sid/icd-10-cm",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "LOINC",
+          "id": "http://loinc.org",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "UCUM",
+          "id": "http://unitsofmeasure.org",
+          "accessLevel": "Public"
+        }
+      ]
+    },
+    "valueSets": {
+      "def": [
+        {
+          "name": "Measles, Mumps and Rubella (MMR) Vaccine Administered VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.11.1086",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Measles, Mumps and Rubella (MMR) Vaccine VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.11.1235",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Measles, Mumps and Rubella (MMR) Vaccine VS_1",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1224",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Measles, Mumps and Rubella (MMR) Vaccine Administered VS_1",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.12.1031",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Measles, Mumps and Rubella (MMR) Vaccine Administered VS_2",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.11.1085",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Pregnant (ICD10CM) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1986",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Pregnant (SNOMED) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.676",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Pregnant State VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4055",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Pregnancy VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1078.264",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Obstetrical or Pregnancy Related Conditions VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.263",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Immunocompromised Conditions VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.1940",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Immunocompromised Conditions VS_1",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.2343",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Immunocompromised Conditions I10 VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.2328",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Immunocompromised Conditions VS_2",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.1740",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Immunocompromised Therapies VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.2348",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Immunocompromised Therapies I10 VS-2",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.2349",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "COVID19 immunocompromised underlying condition reference set VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1181.67",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Immunocompromised Therapies I9 VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.2350",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Immunocompromised Therapies SMCT VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.2351",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Immunocompromised state for Urology Care VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1151.18",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Infection or AIDS (Disorders) (SNOMED) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.460",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.120.12.1003",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV 1 VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.120.11.1005",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Lab Tests VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1056.50",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Infection (Tests for HIV Antibody) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.730",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Indicators of Human Immunodeficiency Virus (HIV) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1056.54",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Indicators of Human Immunodeficiency Virus (HIV) VS_1",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1056.53",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Infection (ARV Combination Treatment for HIV) (RXNORM) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1597",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Infection (Tests for HIV Nucleic Acid [Qualitative]) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.728",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Infection (ARV Protease Inhibitors [PIs]) (RXNORM) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1598",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Human Immunodeficiency Virus (HIV)  Viral Load VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1056.71",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Infection (Tests for HIV Nucleic Acid [Viral Load]) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.729",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Infection (ARV Integrase Strand Transfer Inhibitors [INSTIs]) (RXNORM) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1600",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Infection (ARV Non nucleoside Reverse Transcriptase Inhibitors [NNRTIs]) (RXNORM) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1595",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Infection (Organism or Substance in Lab Results) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.356",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Viral Load VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.120.12.1002",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Infection (Tests for HIV Antigen) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.368",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Infection (Tests for HIV by Culture and Identification Method) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.726",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Infection or AIDS (Disorders) (ICD10CM) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.461",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Infection (ARV Boosters [CYP3A4 Inhibitor]) (RXNORM) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1601",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Infection (ARV CCR5 Antagonists) (RXNORM) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1599",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Indicators of Human Immunodeficiency Virus (HIV) VS_2",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1056.52",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV 1 VS_1",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.120.11.1007",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Tests VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1166.11",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV in Pregnancy Childbirth and Puerperium VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.272",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV in Pregnancy Childbirth and Puerperium VS_1",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.271",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "Indicators of Human Immunodeficiency Virus (HIV) VS_3",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1056.51",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Infection (Combination Tests for HIV Antigen and Antibody) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.731",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV VS_1",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.270",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV 1 VS_2",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.120.11.1006",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV 2 VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.120.11.1008",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Infection (ARV Attachment Inhibitors) (RXNORM) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1603",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Infection (ARV Fusion Inhibitors) (RXNORM) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1596",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV Infection (ARV Postattachment Inhibitors) (RXNORM) VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1146.1602",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "ICD9 Codes for HIV Diagnosis VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1262.3",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV 2 VS_1",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.120.11.1009",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "HIV 2 VS_2",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.120.11.1010",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "History of HIV/AIDS ICD10CM VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1213.72",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "History of HIV/AIDS SNOMED VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1213.73",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "CD4 Percentage VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.121.12.1005",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "CD4+ Percentage VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.121.11.1009",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "CD4 Count VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.121.12.1004",
+          "accessLevel": "Public"
+        },
+        {
+          "name": "CD4+ Count VS",
+          "id": "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.121.11.1006",
+          "accessLevel": "Public"
+        }
+      ]
+    },
+    "codes": {
+      "def": [
+        {
+          "name": "/mm3",
+          "id": "/mm3",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "name": "UCUM"
+          }
+        },
+        {
+          "name": "%",
+          "id": "%",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "name": "UCUM"
+          }
+        },
+        {
+          "name": "measles, mumps, rubella, and varicella virus vaccine code",
+          "id": "94",
+          "display": "measles, mumps, rubella, and varicella virus vaccine",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "name": "CVX"
+          }
+        },
+        {
+          "name": "measles, mumps and rubella virus vaccine code",
+          "id": "03",
+          "display": "measles, mumps and rubella virus vaccine",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "name": "CVX"
+          }
+        },
+        {
+          "name": "Single Pregnacy",
+          "id": "237244005",
+          "display": "Single Pregnacy",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "name": "Snomed"
+          }
+        },
+        {
+          "name": "Immunodeficiency, unspecified",
+          "id": "D84.9",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "name": "ICD-10-CM"
+          }
+        },
+        {
+          "name": "Human immunodeficiency virus infection (disorder)",
+          "id": "86406008",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "name": "Snomed"
+          }
+        },
+        {
+          "name": "CD3+CD4+ Percent",
+          "id": "8123-2",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "name": "LOINC"
+          }
+        },
+        {
+          "name": "CD3+CD4+ Count",
+          "id": "24467-3",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "name": "LOINC"
+          }
+        }
+      ]
+    },
+    "contexts": {
+      "def": [
+        {
+          "name": "Patient"
+        }
+      ]
+    },
+    "statements": {
+      "def": [
+        {
+          "name": "Patient",
+          "context": "Patient",
+          "expression": {
+            "type": "SingletonFrom",
+            "operand": {
+              "dataType": "{http://hl7.org/fhir}Patient",
+              "templateId": "http://hl7.org/fhir/StructureDefinition/Patient",
+              "type": "Retrieve"
+            }
+          }
+        },
+        {
+          "name": "MMR_Vaccine_valuesets",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "expression": {
+            "type": "Union",
+            "operand": [
+              {
+                "type": "ToList",
+                "operand": {
+                  "name": "Measles, Mumps and Rubella (MMR) Vaccine VS",
+                  "type": "ValueSetRef"
+                }
+              },
+              {
+                "type": "ToList",
+                "operand": {
+                  "name": "Measles, Mumps and Rubella (MMR) Vaccine VS_1",
+                  "type": "ValueSetRef"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "MMR_Vaccine_Admin_valuesets",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "expression": {
+            "type": "Union",
+            "operand": [
+              {
+                "type": "Union",
+                "operand": [
+                  {
+                    "type": "ToList",
+                    "operand": {
+                      "name": "Measles, Mumps and Rubella (MMR) Vaccine Administered VS",
+                      "type": "ValueSetRef"
+                    }
+                  },
+                  {
+                    "type": "ToList",
+                    "operand": {
+                      "name": "Measles, Mumps and Rubella (MMR) Vaccine Administered VS_1",
+                      "type": "ValueSetRef"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "ToList",
+                "operand": {
+                  "name": "Measles, Mumps and Rubella (MMR) Vaccine Administered VS_2",
+                  "type": "ValueSetRef"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "MMR_Vaccine_CVXCodes",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "expression": {
+            "type": "Union",
+            "operand": [
+              {
+                "type": "ToList",
+                "operand": {
+                  "name": "measles, mumps, rubella, and varicella virus vaccine code",
+                  "type": "CodeRef"
+                }
+              },
+              {
+                "type": "ToList",
+                "operand": {
+                  "name": "measles, mumps and rubella virus vaccine code",
+                  "type": "CodeRef"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "MMR_All_Valuesets",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "expression": {
+            "type": "Union",
+            "operand": [
+              {
+                "type": "As",
+                "operand": {
+                  "type": "Union",
+                  "operand": [
+                    {
+                      "name": "MMR_Vaccine_valuesets",
+                      "type": "ExpressionRef"
+                    },
+                    {
+                      "name": "MMR_Vaccine_Admin_valuesets",
+                      "type": "ExpressionRef"
+                    }
+                  ]
+                },
+                "asTypeSpecifier": {
+                  "type": "ListTypeSpecifier",
+                  "elementType": {
+                    "type": "ChoiceTypeSpecifier",
+                    "choice": [
+                      {
+                        "name": "{urn:hl7-org:elm-types:r1}ValueSet",
+                        "type": "NamedTypeSpecifier"
+                      },
+                      {
+                        "name": "{urn:hl7-org:elm-types:r1}Code",
+                        "type": "NamedTypeSpecifier"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "type": "As",
+                "operand": {
+                  "name": "MMR_Vaccine_CVXCodes",
+                  "type": "ExpressionRef"
+                },
+                "asTypeSpecifier": {
+                  "type": "ListTypeSpecifier",
+                  "elementType": {
+                    "type": "ChoiceTypeSpecifier",
+                    "choice": [
+                      {
+                        "name": "{urn:hl7-org:elm-types:r1}ValueSet",
+                        "type": "NamedTypeSpecifier"
+                      },
+                      {
+                        "name": "{urn:hl7-org:elm-types:r1}Code",
+                        "type": "NamedTypeSpecifier"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Pregnacy_All_Valuesets",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "expression": {
+            "type": "Union",
+            "operand": [
+              {
+                "type": "As",
+                "operand": {
+                  "type": "Union",
+                  "operand": [
+                    {
+                      "type": "Union",
+                      "operand": [
+                        {
+                          "type": "ToList",
+                          "operand": {
+                            "name": "Pregnant (ICD10CM) VS",
+                            "type": "ValueSetRef"
+                          }
+                        },
+                        {
+                          "type": "ToList",
+                          "operand": {
+                            "name": "Pregnant (SNOMED) VS",
+                            "type": "ValueSetRef"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Union",
+                      "operand": [
+                        {
+                          "type": "ToList",
+                          "operand": {
+                            "name": "Pregnant State VS",
+                            "type": "ValueSetRef"
+                          }
+                        },
+                        {
+                          "type": "ToList",
+                          "operand": {
+                            "name": "Pregnancy VS",
+                            "type": "ValueSetRef"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "asTypeSpecifier": {
+                  "type": "ListTypeSpecifier",
+                  "elementType": {
+                    "type": "ChoiceTypeSpecifier",
+                    "choice": [
+                      {
+                        "name": "{urn:hl7-org:elm-types:r1}ValueSet",
+                        "type": "NamedTypeSpecifier"
+                      },
+                      {
+                        "name": "{urn:hl7-org:elm-types:r1}Code",
+                        "type": "NamedTypeSpecifier"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "type": "As",
+                "operand": {
+                  "type": "Union",
+                  "operand": [
+                    {
+                      "type": "Query",
+                      "source": [
+                        {
+                          "alias": "X",
+                          "expression": {
+                            "type": "ToList",
+                            "operand": {
+                              "name": "Obstetrical or Pregnancy Related Conditions VS",
+                              "type": "ValueSetRef"
+                            }
+                          }
+                        }
+                      ],
+                      "return": {
+                        "distinct": false,
+                        "expression": {
+                          "type": "As",
+                          "operand": {
+                            "name": "X",
+                            "type": "AliasRef"
+                          },
+                          "asTypeSpecifier": {
+                            "type": "ChoiceTypeSpecifier",
+                            "choice": [
+                              {
+                                "name": "{urn:hl7-org:elm-types:r1}ValueSet",
+                                "type": "NamedTypeSpecifier"
+                              },
+                              {
+                                "name": "{urn:hl7-org:elm-types:r1}Code",
+                                "type": "NamedTypeSpecifier"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "ToList",
+                      "operand": {
+                        "type": "As",
+                        "operand": {
+                          "name": "Single Pregnacy",
+                          "type": "CodeRef"
+                        },
+                        "asTypeSpecifier": {
+                          "type": "ChoiceTypeSpecifier",
+                          "choice": [
+                            {
+                              "name": "{urn:hl7-org:elm-types:r1}ValueSet",
+                              "type": "NamedTypeSpecifier"
+                            },
+                            {
+                              "name": "{urn:hl7-org:elm-types:r1}Code",
+                              "type": "NamedTypeSpecifier"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                },
+                "asTypeSpecifier": {
+                  "type": "ListTypeSpecifier",
+                  "elementType": {
+                    "type": "ChoiceTypeSpecifier",
+                    "choice": [
+                      {
+                        "name": "{urn:hl7-org:elm-types:r1}ValueSet",
+                        "type": "NamedTypeSpecifier"
+                      },
+                      {
+                        "name": "{urn:hl7-org:elm-types:r1}Code",
+                        "type": "NamedTypeSpecifier"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Immunocompromised_All_Valuesets",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "expression": {
+            "type": "Union",
+            "operand": [
+              {
+                "type": "Query",
+                "source": [
+                  {
+                    "alias": "X",
+                    "expression": {
+                      "type": "Union",
+                      "operand": [
+                        {
+                          "type": "Union",
+                          "operand": [
+                            {
+                              "type": "Union",
+                              "operand": [
+                                {
+                                  "type": "Union",
+                                  "operand": [
+                                    {
+                                      "type": "Union",
+                                      "operand": [
+                                        {
+                                          "type": "ToList",
+                                          "operand": {
+                                            "name": "Immunocompromised Conditions VS",
+                                            "type": "ValueSetRef"
+                                          }
+                                        },
+                                        {
+                                          "type": "ToList",
+                                          "operand": {
+                                            "name": "Immunocompromised Conditions VS_1",
+                                            "type": "ValueSetRef"
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "Union",
+                                      "operand": [
+                                        {
+                                          "type": "ToList",
+                                          "operand": {
+                                            "name": "Immunocompromised Conditions I10 VS",
+                                            "type": "ValueSetRef"
+                                          }
+                                        },
+                                        {
+                                          "type": "ToList",
+                                          "operand": {
+                                            "name": "Immunocompromised Conditions VS_2",
+                                            "type": "ValueSetRef"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Union",
+                                  "operand": [
+                                    {
+                                      "type": "ToList",
+                                      "operand": {
+                                        "name": "Immunocompromised Therapies VS",
+                                        "type": "ValueSetRef"
+                                      }
+                                    },
+                                    {
+                                      "type": "ToList",
+                                      "operand": {
+                                        "name": "Immunocompromised Therapies I10 VS-2",
+                                        "type": "ValueSetRef"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Union",
+                              "operand": [
+                                {
+                                  "type": "ToList",
+                                  "operand": {
+                                    "name": "COVID19 immunocompromised underlying condition reference set VS",
+                                    "type": "ValueSetRef"
+                                  }
+                                },
+                                {
+                                  "type": "ToList",
+                                  "operand": {
+                                    "name": "Immunocompromised Therapies I9 VS",
+                                    "type": "ValueSetRef"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Union",
+                          "operand": [
+                            {
+                              "type": "ToList",
+                              "operand": {
+                                "name": "Immunocompromised Therapies SMCT VS",
+                                "type": "ValueSetRef"
+                              }
+                            },
+                            {
+                              "type": "ToList",
+                              "operand": {
+                                "name": "Immunocompromised state for Urology Care VS",
+                                "type": "ValueSetRef"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "return": {
+                  "distinct": false,
+                  "expression": {
+                    "type": "As",
+                    "operand": {
+                      "name": "X",
+                      "type": "AliasRef"
+                    },
+                    "asTypeSpecifier": {
+                      "type": "ChoiceTypeSpecifier",
+                      "choice": [
+                        {
+                          "name": "{urn:hl7-org:elm-types:r1}ValueSet",
+                          "type": "NamedTypeSpecifier"
+                        },
+                        {
+                          "name": "{urn:hl7-org:elm-types:r1}Code",
+                          "type": "NamedTypeSpecifier"
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              {
+                "type": "ToList",
+                "operand": {
+                  "type": "As",
+                  "operand": {
+                    "name": "Immunodeficiency, unspecified",
+                    "type": "CodeRef"
+                  },
+                  "asTypeSpecifier": {
+                    "type": "ChoiceTypeSpecifier",
+                    "choice": [
+                      {
+                        "name": "{urn:hl7-org:elm-types:r1}ValueSet",
+                        "type": "NamedTypeSpecifier"
+                      },
+                      {
+                        "name": "{urn:hl7-org:elm-types:r1}Code",
+                        "type": "NamedTypeSpecifier"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "HIV_AIDS_All_Valuesets",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "expression": {
+            "type": "Union",
+            "operand": [
+              {
+                "type": "As",
+                "operand": {
+                  "type": "Union",
+                  "operand": [
+                    {
+                      "type": "Union",
+                      "operand": [
+                        {
+                          "type": "Union",
+                          "operand": [
+                            {
+                              "type": "Union",
+                              "operand": [
+                                {
+                                  "type": "Union",
+                                  "operand": [
+                                    {
+                                      "type": "Union",
+                                      "operand": [
+                                        {
+                                          "type": "Union",
+                                          "operand": [
+                                            {
+                                              "type": "Union",
+                                              "operand": [
+                                                {
+                                                  "type": "Union",
+                                                  "operand": [
+                                                    {
+                                                      "type": "Union",
+                                                      "operand": [
+                                                        {
+                                                          "type": "Union",
+                                                          "operand": [
+                                                            {
+                                                              "type": "Union",
+                                                              "operand": [
+                                                                {
+                                                                  "type": "Union",
+                                                                  "operand": [
+                                                                    {
+                                                                      "type": "Union",
+                                                                      "operand": [
+                                                                        {
+                                                                          "type": "Union",
+                                                                          "operand": [
+                                                                            {
+                                                                              "type": "Union",
+                                                                              "operand": [
+                                                                                {
+                                                                                  "type": "Union",
+                                                                                  "operand": [
+                                                                                    {
+                                                                                      "type": "Union",
+                                                                                      "operand": [
+                                                                                        {
+                                                                                          "type": "Union",
+                                                                                          "operand": [
+                                                                                            {
+                                                                                              "type": "ToList",
+                                                                                              "operand": {
+                                                                                                "name": "HIV Infection or AIDS (Disorders) (SNOMED) VS",
+                                                                                                "type": "ValueSetRef"
+                                                                                              }
+                                                                                            },
+                                                                                            {
+                                                                                              "type": "ToList",
+                                                                                              "operand": {
+                                                                                                "name": "HIV VS",
+                                                                                                "type": "ValueSetRef"
+                                                                                              }
+                                                                                            }
+                                                                                          ]
+                                                                                        },
+                                                                                        {
+                                                                                          "type": "Union",
+                                                                                          "operand": [
+                                                                                            {
+                                                                                              "type": "ToList",
+                                                                                              "operand": {
+                                                                                                "name": "HIV 1 VS",
+                                                                                                "type": "ValueSetRef"
+                                                                                              }
+                                                                                            },
+                                                                                            {
+                                                                                              "type": "ToList",
+                                                                                              "operand": {
+                                                                                                "name": "HIV Lab Tests VS",
+                                                                                                "type": "ValueSetRef"
+                                                                                              }
+                                                                                            }
+                                                                                          ]
+                                                                                        }
+                                                                                      ]
+                                                                                    },
+                                                                                    {
+                                                                                      "type": "Union",
+                                                                                      "operand": [
+                                                                                        {
+                                                                                          "type": "ToList",
+                                                                                          "operand": {
+                                                                                            "name": "HIV Infection (Tests for HIV Antibody) VS",
+                                                                                            "type": "ValueSetRef"
+                                                                                          }
+                                                                                        },
+                                                                                        {
+                                                                                          "type": "ToList",
+                                                                                          "operand": {
+                                                                                            "name": "Indicators of Human Immunodeficiency Virus (HIV) VS",
+                                                                                            "type": "ValueSetRef"
+                                                                                          }
+                                                                                        }
+                                                                                      ]
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "type": "Union",
+                                                                                  "operand": [
+                                                                                    {
+                                                                                      "type": "ToList",
+                                                                                      "operand": {
+                                                                                        "name": "Indicators of Human Immunodeficiency Virus (HIV) VS_1",
+                                                                                        "type": "ValueSetRef"
+                                                                                      }
+                                                                                    },
+                                                                                    {
+                                                                                      "type": "ToList",
+                                                                                      "operand": {
+                                                                                        "name": "HIV Infection (ARV Combination Treatment for HIV) (RXNORM) VS",
+                                                                                        "type": "ValueSetRef"
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "type": "Union",
+                                                                              "operand": [
+                                                                                {
+                                                                                  "type": "ToList",
+                                                                                  "operand": {
+                                                                                    "name": "HIV Infection (Tests for HIV Nucleic Acid [Qualitative]) VS",
+                                                                                    "type": "ValueSetRef"
+                                                                                  }
+                                                                                },
+                                                                                {
+                                                                                  "type": "ToList",
+                                                                                  "operand": {
+                                                                                    "name": "HIV Infection (ARV Protease Inhibitors [PIs]) (RXNORM) VS",
+                                                                                    "type": "ValueSetRef"
+                                                                                  }
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "type": "Union",
+                                                                          "operand": [
+                                                                            {
+                                                                              "type": "ToList",
+                                                                              "operand": {
+                                                                                "name": "Human Immunodeficiency Virus (HIV)  Viral Load VS",
+                                                                                "type": "ValueSetRef"
+                                                                              }
+                                                                            },
+                                                                            {
+                                                                              "type": "ToList",
+                                                                              "operand": {
+                                                                                "name": "HIV Infection (Tests for HIV Nucleic Acid [Viral Load]) VS",
+                                                                                "type": "ValueSetRef"
+                                                                              }
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "type": "Union",
+                                                                      "operand": [
+                                                                        {
+                                                                          "type": "ToList",
+                                                                          "operand": {
+                                                                            "name": "HIV Infection (ARV Integrase Strand Transfer Inhibitors [INSTIs]) (RXNORM) VS",
+                                                                            "type": "ValueSetRef"
+                                                                          }
+                                                                        },
+                                                                        {
+                                                                          "type": "ToList",
+                                                                          "operand": {
+                                                                            "name": "HIV Infection (ARV Non nucleoside Reverse Transcriptase Inhibitors [NNRTIs]) (RXNORM) VS",
+                                                                            "type": "ValueSetRef"
+                                                                          }
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "type": "Union",
+                                                                  "operand": [
+                                                                    {
+                                                                      "type": "ToList",
+                                                                      "operand": {
+                                                                        "name": "HIV Infection (Organism or Substance in Lab Results) VS",
+                                                                        "type": "ValueSetRef"
+                                                                      }
+                                                                    },
+                                                                    {
+                                                                      "type": "ToList",
+                                                                      "operand": {
+                                                                        "name": "HIV Viral Load VS",
+                                                                        "type": "ValueSetRef"
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "type": "Union",
+                                                              "operand": [
+                                                                {
+                                                                  "type": "ToList",
+                                                                  "operand": {
+                                                                    "name": "HIV Infection (Tests for HIV Antigen) VS",
+                                                                    "type": "ValueSetRef"
+                                                                  }
+                                                                },
+                                                                {
+                                                                  "type": "ToList",
+                                                                  "operand": {
+                                                                    "name": "HIV Infection (Tests for HIV by Culture and Identification Method) VS",
+                                                                    "type": "ValueSetRef"
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "Union",
+                                                          "operand": [
+                                                            {
+                                                              "type": "ToList",
+                                                              "operand": {
+                                                                "name": "HIV Infection or AIDS (Disorders) (ICD10CM) VS",
+                                                                "type": "ValueSetRef"
+                                                              }
+                                                            },
+                                                            {
+                                                              "type": "ToList",
+                                                              "operand": {
+                                                                "name": "HIV Infection (ARV Boosters [CYP3A4 Inhibitor]) (RXNORM) VS",
+                                                                "type": "ValueSetRef"
+                                                              }
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "Union",
+                                                      "operand": [
+                                                        {
+                                                          "type": "ToList",
+                                                          "operand": {
+                                                            "name": "HIV Infection (ARV CCR5 Antagonists) (RXNORM) VS",
+                                                            "type": "ValueSetRef"
+                                                          }
+                                                        },
+                                                        {
+                                                          "type": "ToList",
+                                                          "operand": {
+                                                            "name": "Indicators of Human Immunodeficiency Virus (HIV) VS_2",
+                                                            "type": "ValueSetRef"
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "Union",
+                                                  "operand": [
+                                                    {
+                                                      "type": "ToList",
+                                                      "operand": {
+                                                        "name": "HIV 1 VS_1",
+                                                        "type": "ValueSetRef"
+                                                      }
+                                                    },
+                                                    {
+                                                      "type": "ToList",
+                                                      "operand": {
+                                                        "name": "HIV Tests VS",
+                                                        "type": "ValueSetRef"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "Union",
+                                              "operand": [
+                                                {
+                                                  "type": "ToList",
+                                                  "operand": {
+                                                    "name": "HIV in Pregnancy Childbirth and Puerperium VS",
+                                                    "type": "ValueSetRef"
+                                                  }
+                                                },
+                                                {
+                                                  "type": "ToList",
+                                                  "operand": {
+                                                    "name": "HIV in Pregnancy Childbirth and Puerperium VS_1",
+                                                    "type": "ValueSetRef"
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "Union",
+                                          "operand": [
+                                            {
+                                              "type": "ToList",
+                                              "operand": {
+                                                "name": "Indicators of Human Immunodeficiency Virus (HIV) VS_3",
+                                                "type": "ValueSetRef"
+                                              }
+                                            },
+                                            {
+                                              "type": "ToList",
+                                              "operand": {
+                                                "name": "HIV Infection (Combination Tests for HIV Antigen and Antibody) VS",
+                                                "type": "ValueSetRef"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "Union",
+                                      "operand": [
+                                        {
+                                          "type": "ToList",
+                                          "operand": {
+                                            "name": "HIV VS_1",
+                                            "type": "ValueSetRef"
+                                          }
+                                        },
+                                        {
+                                          "type": "ToList",
+                                          "operand": {
+                                            "name": "HIV 1 VS_2",
+                                            "type": "ValueSetRef"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "Union",
+                                  "operand": [
+                                    {
+                                      "type": "ToList",
+                                      "operand": {
+                                        "name": "HIV 2 VS",
+                                        "type": "ValueSetRef"
+                                      }
+                                    },
+                                    {
+                                      "type": "ToList",
+                                      "operand": {
+                                        "name": "HIV Infection (ARV Attachment Inhibitors) (RXNORM) VS",
+                                        "type": "ValueSetRef"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Union",
+                              "operand": [
+                                {
+                                  "type": "ToList",
+                                  "operand": {
+                                    "name": "HIV Infection (ARV Fusion Inhibitors) (RXNORM) VS",
+                                    "type": "ValueSetRef"
+                                  }
+                                },
+                                {
+                                  "type": "ToList",
+                                  "operand": {
+                                    "name": "HIV Infection (ARV Postattachment Inhibitors) (RXNORM) VS",
+                                    "type": "ValueSetRef"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Union",
+                          "operand": [
+                            {
+                              "type": "ToList",
+                              "operand": {
+                                "name": "ICD9 Codes for HIV Diagnosis VS",
+                                "type": "ValueSetRef"
+                              }
+                            },
+                            {
+                              "type": "ToList",
+                              "operand": {
+                                "name": "HIV 2 VS_1",
+                                "type": "ValueSetRef"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Union",
+                      "operand": [
+                        {
+                          "type": "ToList",
+                          "operand": {
+                            "name": "HIV 2 VS_2",
+                            "type": "ValueSetRef"
+                          }
+                        },
+                        {
+                          "type": "ToList",
+                          "operand": {
+                            "name": "History of HIV/AIDS ICD10CM VS",
+                            "type": "ValueSetRef"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "asTypeSpecifier": {
+                  "type": "ListTypeSpecifier",
+                  "elementType": {
+                    "type": "ChoiceTypeSpecifier",
+                    "choice": [
+                      {
+                        "name": "{urn:hl7-org:elm-types:r1}ValueSet",
+                        "type": "NamedTypeSpecifier"
+                      },
+                      {
+                        "name": "{urn:hl7-org:elm-types:r1}Code",
+                        "type": "NamedTypeSpecifier"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "type": "As",
+                "operand": {
+                  "type": "Union",
+                  "operand": [
+                    {
+                      "type": "Query",
+                      "source": [
+                        {
+                          "alias": "X",
+                          "expression": {
+                            "type": "ToList",
+                            "operand": {
+                              "name": "History of HIV/AIDS SNOMED VS",
+                              "type": "ValueSetRef"
+                            }
+                          }
+                        }
+                      ],
+                      "return": {
+                        "distinct": false,
+                        "expression": {
+                          "type": "As",
+                          "operand": {
+                            "name": "X",
+                            "type": "AliasRef"
+                          },
+                          "asTypeSpecifier": {
+                            "type": "ChoiceTypeSpecifier",
+                            "choice": [
+                              {
+                                "name": "{urn:hl7-org:elm-types:r1}ValueSet",
+                                "type": "NamedTypeSpecifier"
+                              },
+                              {
+                                "name": "{urn:hl7-org:elm-types:r1}Code",
+                                "type": "NamedTypeSpecifier"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "ToList",
+                      "operand": {
+                        "type": "As",
+                        "operand": {
+                          "name": "Human immunodeficiency virus infection (disorder)",
+                          "type": "CodeRef"
+                        },
+                        "asTypeSpecifier": {
+                          "type": "ChoiceTypeSpecifier",
+                          "choice": [
+                            {
+                              "name": "{urn:hl7-org:elm-types:r1}ValueSet",
+                              "type": "NamedTypeSpecifier"
+                            },
+                            {
+                              "name": "{urn:hl7-org:elm-types:r1}Code",
+                              "type": "NamedTypeSpecifier"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                },
+                "asTypeSpecifier": {
+                  "type": "ListTypeSpecifier",
+                  "elementType": {
+                    "type": "ChoiceTypeSpecifier",
+                    "choice": [
+                      {
+                        "name": "{urn:hl7-org:elm-types:r1}ValueSet",
+                        "type": "NamedTypeSpecifier"
+                      },
+                      {
+                        "name": "{urn:hl7-org:elm-types:r1}Code",
+                        "type": "NamedTypeSpecifier"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "HIV_AIDS_Quantity_Valuesets",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "expression": {
+            "type": "Union",
+            "operand": [
+              {
+                "type": "Query",
+                "source": [
+                  {
+                    "alias": "X",
+                    "expression": {
+                      "type": "Union",
+                      "operand": [
+                        {
+                          "type": "ToList",
+                          "operand": {
+                            "name": "CD4 Count VS",
+                            "type": "ValueSetRef"
+                          }
+                        },
+                        {
+                          "type": "ToList",
+                          "operand": {
+                            "name": "CD4+ Count VS",
+                            "type": "ValueSetRef"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "return": {
+                  "distinct": false,
+                  "expression": {
+                    "type": "As",
+                    "operand": {
+                      "name": "X",
+                      "type": "AliasRef"
+                    },
+                    "asTypeSpecifier": {
+                      "type": "ChoiceTypeSpecifier",
+                      "choice": [
+                        {
+                          "name": "{urn:hl7-org:elm-types:r1}ValueSet",
+                          "type": "NamedTypeSpecifier"
+                        },
+                        {
+                          "name": "{urn:hl7-org:elm-types:r1}Code",
+                          "type": "NamedTypeSpecifier"
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              {
+                "type": "ToList",
+                "operand": {
+                  "type": "As",
+                  "operand": {
+                    "name": "CD3+CD4+ Count",
+                    "type": "CodeRef"
+                  },
+                  "asTypeSpecifier": {
+                    "type": "ChoiceTypeSpecifier",
+                    "choice": [
+                      {
+                        "name": "{urn:hl7-org:elm-types:r1}ValueSet",
+                        "type": "NamedTypeSpecifier"
+                      },
+                      {
+                        "name": "{urn:hl7-org:elm-types:r1}Code",
+                        "type": "NamedTypeSpecifier"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "HIV_AIDS_Percent_Valuesets",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "expression": {
+            "type": "Union",
+            "operand": [
+              {
+                "type": "Query",
+                "source": [
+                  {
+                    "alias": "X",
+                    "expression": {
+                      "type": "Union",
+                      "operand": [
+                        {
+                          "type": "ToList",
+                          "operand": {
+                            "name": "CD4 Percentage VS",
+                            "type": "ValueSetRef"
+                          }
+                        },
+                        {
+                          "type": "ToList",
+                          "operand": {
+                            "name": "CD4+ Percentage VS",
+                            "type": "ValueSetRef"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "return": {
+                  "distinct": false,
+                  "expression": {
+                    "type": "As",
+                    "operand": {
+                      "name": "X",
+                      "type": "AliasRef"
+                    },
+                    "asTypeSpecifier": {
+                      "type": "ChoiceTypeSpecifier",
+                      "choice": [
+                        {
+                          "name": "{urn:hl7-org:elm-types:r1}ValueSet",
+                          "type": "NamedTypeSpecifier"
+                        },
+                        {
+                          "name": "{urn:hl7-org:elm-types:r1}Code",
+                          "type": "NamedTypeSpecifier"
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              {
+                "type": "ToList",
+                "operand": {
+                  "type": "As",
+                  "operand": {
+                    "name": "CD3+CD4+ Percent",
+                    "type": "CodeRef"
+                  },
+                  "asTypeSpecifier": {
+                    "type": "ChoiceTypeSpecifier",
+                    "choice": [
+                      {
+                        "name": "{urn:hl7-org:elm-types:r1}ValueSet",
+                        "type": "NamedTypeSpecifier"
+                      },
+                      {
+                        "name": "{urn:hl7-org:elm-types:r1}Code",
+                        "type": "NamedTypeSpecifier"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "ToCode",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "type": "FunctionDef",
+          "expression": {
+            "classType": "{urn:hl7-org:elm-types:r1}Code",
+            "type": "Instance",
+            "element": [
+              {
+                "name": "code",
+                "value": {
+                  "path": "value",
+                  "type": "Property",
+                  "source": {
+                    "path": "code",
+                    "type": "Property",
+                    "source": {
+                      "name": "coding",
+                      "type": "OperandRef"
+                    }
+                  }
+                }
+              },
+              {
+                "name": "system",
+                "value": {
+                  "path": "value",
+                  "type": "Property",
+                  "source": {
+                    "path": "system",
+                    "type": "Property",
+                    "source": {
+                      "name": "coding",
+                      "type": "OperandRef"
+                    }
+                  }
+                }
+              },
+              {
+                "name": "version",
+                "value": {
+                  "path": "value",
+                  "type": "Property",
+                  "source": {
+                    "path": "version",
+                    "type": "Property",
+                    "source": {
+                      "name": "coding",
+                      "type": "OperandRef"
+                    }
+                  }
+                }
+              },
+              {
+                "name": "display",
+                "value": {
+                  "path": "value",
+                  "type": "Property",
+                  "source": {
+                    "path": "display",
+                    "type": "Property",
+                    "source": {
+                      "name": "coding",
+                      "type": "OperandRef"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "operand": [
+            {
+              "name": "coding",
+              "operandTypeSpecifier": {
+                "name": "{http://hl7.org/fhir}Coding",
+                "type": "NamedTypeSpecifier"
+              }
+            }
+          ]
+        },
+        {
+          "name": "FindValidCodes",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "type": "FunctionDef",
+          "expression": {
+            "type": "Query",
+            "source": [
+              {
+                "alias": "c",
+                "expression": {
+                  "name": "codes",
+                  "type": "OperandRef"
+                }
+              }
+            ],
+            "relationship": [],
+            "where": {
+              "type": "In",
+              "operand": [
+                {
+                  "name": "ToCode",
+                  "type": "FunctionRef",
+                  "operand": [
+                    {
+                      "name": "c",
+                      "type": "AliasRef"
+                    }
+                  ]
+                },
+                {
+                  "type": "Query",
+                  "source": [
+                    {
+                      "alias": "X",
+                      "expression": {
+                        "name": "MMR_All_Valuesets",
+                        "type": "ExpressionRef"
+                      }
+                    }
+                  ],
+                  "return": {
+                    "distinct": false,
+                    "expression": {
+                      "asType": "{urn:hl7-org:elm-types:r1}Code",
+                      "type": "As",
+                      "operand": {
+                        "name": "X",
+                        "type": "AliasRef"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "operand": [
+            {
+              "name": "codes",
+              "operandTypeSpecifier": {
+                "type": "ListTypeSpecifier",
+                "elementType": {
+                  "name": "{http://hl7.org/fhir}Coding",
+                  "type": "NamedTypeSpecifier"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "FindValidVaccines",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "type": "FunctionDef",
+          "expression": {
+            "type": "Query",
+            "source": [
+              {
+                "alias": "Temp",
+                "expression": {
+                  "name": "Immunizations",
+                  "type": "OperandRef"
+                }
+              }
+            ],
+            "relationship": [],
+            "where": {
+              "type": "Not",
+              "operand": {
+                "type": "IsNull",
+                "operand": {
+                  "name": "FindValidCodes",
+                  "type": "FunctionRef",
+                  "operand": [
+                    {
+                      "path": "coding",
+                      "type": "Property",
+                      "source": {
+                        "path": "vaccineCode",
+                        "scope": "Temp",
+                        "type": "Property"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "operand": [
+            {
+              "name": "Immunizations",
+              "operandTypeSpecifier": {
+                "type": "ListTypeSpecifier",
+                "elementType": {
+                  "name": "{http://hl7.org/fhir}Immunization",
+                  "type": "NamedTypeSpecifier"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "FindValidPregnancyCodes",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "type": "FunctionDef",
+          "expression": {
+            "type": "Query",
+            "source": [
+              {
+                "alias": "c",
+                "expression": {
+                  "name": "codes",
+                  "type": "OperandRef"
+                }
+              }
+            ],
+            "relationship": [],
+            "where": {
+              "type": "In",
+              "operand": [
+                {
+                  "name": "ToCode",
+                  "type": "FunctionRef",
+                  "operand": [
+                    {
+                      "name": "c",
+                      "type": "AliasRef"
+                    }
+                  ]
+                },
+                {
+                  "type": "Query",
+                  "source": [
+                    {
+                      "alias": "X",
+                      "expression": {
+                        "name": "Pregnacy_All_Valuesets",
+                        "type": "ExpressionRef"
+                      }
+                    }
+                  ],
+                  "return": {
+                    "distinct": false,
+                    "expression": {
+                      "asType": "{urn:hl7-org:elm-types:r1}Code",
+                      "type": "As",
+                      "operand": {
+                        "name": "X",
+                        "type": "AliasRef"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "operand": [
+            {
+              "name": "codes",
+              "operandTypeSpecifier": {
+                "type": "ListTypeSpecifier",
+                "elementType": {
+                  "name": "{http://hl7.org/fhir}Coding",
+                  "type": "NamedTypeSpecifier"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "FindValidImmunocompromisedCodes",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "type": "FunctionDef",
+          "expression": {
+            "type": "Query",
+            "source": [
+              {
+                "alias": "c",
+                "expression": {
+                  "name": "codes",
+                  "type": "OperandRef"
+                }
+              }
+            ],
+            "relationship": [],
+            "where": {
+              "type": "In",
+              "operand": [
+                {
+                  "name": "ToCode",
+                  "type": "FunctionRef",
+                  "operand": [
+                    {
+                      "name": "c",
+                      "type": "AliasRef"
+                    }
+                  ]
+                },
+                {
+                  "type": "Query",
+                  "source": [
+                    {
+                      "alias": "X",
+                      "expression": {
+                        "name": "Immunocompromised_All_Valuesets",
+                        "type": "ExpressionRef"
+                      }
+                    }
+                  ],
+                  "return": {
+                    "distinct": false,
+                    "expression": {
+                      "asType": "{urn:hl7-org:elm-types:r1}Code",
+                      "type": "As",
+                      "operand": {
+                        "name": "X",
+                        "type": "AliasRef"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "operand": [
+            {
+              "name": "codes",
+              "operandTypeSpecifier": {
+                "type": "ListTypeSpecifier",
+                "elementType": {
+                  "name": "{http://hl7.org/fhir}Coding",
+                  "type": "NamedTypeSpecifier"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "FindValidHivAidsCodes",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "type": "FunctionDef",
+          "expression": {
+            "type": "Query",
+            "source": [
+              {
+                "alias": "c",
+                "expression": {
+                  "name": "codes",
+                  "type": "OperandRef"
+                }
+              }
+            ],
+            "relationship": [],
+            "where": {
+              "type": "In",
+              "operand": [
+                {
+                  "name": "ToCode",
+                  "type": "FunctionRef",
+                  "operand": [
+                    {
+                      "name": "c",
+                      "type": "AliasRef"
+                    }
+                  ]
+                },
+                {
+                  "type": "Query",
+                  "source": [
+                    {
+                      "alias": "X",
+                      "expression": {
+                        "name": "HIV_AIDS_All_Valuesets",
+                        "type": "ExpressionRef"
+                      }
+                    }
+                  ],
+                  "return": {
+                    "distinct": false,
+                    "expression": {
+                      "asType": "{urn:hl7-org:elm-types:r1}Code",
+                      "type": "As",
+                      "operand": {
+                        "name": "X",
+                        "type": "AliasRef"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "operand": [
+            {
+              "name": "codes",
+              "operandTypeSpecifier": {
+                "type": "ListTypeSpecifier",
+                "elementType": {
+                  "name": "{http://hl7.org/fhir}Coding",
+                  "type": "NamedTypeSpecifier"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "FindValidPregnantCondition",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "type": "FunctionDef",
+          "expression": {
+            "type": "Query",
+            "source": [
+              {
+                "alias": "Temp",
+                "expression": {
+                  "name": "Conditions",
+                  "type": "OperandRef"
+                }
+              }
+            ],
+            "relationship": [],
+            "where": {
+              "type": "Not",
+              "operand": {
+                "type": "IsNull",
+                "operand": {
+                  "name": "FindValidPregnancyCodes",
+                  "type": "FunctionRef",
+                  "operand": [
+                    {
+                      "path": "coding",
+                      "type": "Property",
+                      "source": {
+                        "path": "code",
+                        "scope": "Temp",
+                        "type": "Property"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "operand": [
+            {
+              "name": "Conditions",
+              "operandTypeSpecifier": {
+                "type": "ListTypeSpecifier",
+                "elementType": {
+                  "name": "{http://hl7.org/fhir}Condition",
+                  "type": "NamedTypeSpecifier"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "FindValidImmunocompromisedCondition",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "type": "FunctionDef",
+          "expression": {
+            "type": "Query",
+            "source": [
+              {
+                "alias": "Temp",
+                "expression": {
+                  "name": "Conditions",
+                  "type": "OperandRef"
+                }
+              }
+            ],
+            "relationship": [],
+            "where": {
+              "type": "Not",
+              "operand": {
+                "type": "IsNull",
+                "operand": {
+                  "name": "FindValidImmunocompromisedCodes",
+                  "type": "FunctionRef",
+                  "operand": [
+                    {
+                      "path": "coding",
+                      "type": "Property",
+                      "source": {
+                        "path": "code",
+                        "scope": "Temp",
+                        "type": "Property"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "operand": [
+            {
+              "name": "Conditions",
+              "operandTypeSpecifier": {
+                "type": "ListTypeSpecifier",
+                "elementType": {
+                  "name": "{http://hl7.org/fhir}Condition",
+                  "type": "NamedTypeSpecifier"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "FindValidHivAidsCondition",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "type": "FunctionDef",
+          "expression": {
+            "type": "Query",
+            "source": [
+              {
+                "alias": "Temp",
+                "expression": {
+                  "name": "Conditions",
+                  "type": "OperandRef"
+                }
+              }
+            ],
+            "relationship": [],
+            "where": {
+              "type": "Not",
+              "operand": {
+                "type": "IsNull",
+                "operand": {
+                  "name": "FindValidHivAidsCodes",
+                  "type": "FunctionRef",
+                  "operand": [
+                    {
+                      "path": "coding",
+                      "type": "Property",
+                      "source": {
+                        "path": "code",
+                        "scope": "Temp",
+                        "type": "Property"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "operand": [
+            {
+              "name": "Conditions",
+              "operandTypeSpecifier": {
+                "type": "ListTypeSpecifier",
+                "elementType": {
+                  "name": "{http://hl7.org/fhir}Condition",
+                  "type": "NamedTypeSpecifier"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "FindValidHivAidsObservationMeasurementQuantity",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "type": "FunctionDef",
+          "expression": {
+            "type": "And",
+            "operand": [
+              {
+                "type": "Equal",
+                "operand": [
+                  {
+                    "path": "value",
+                    "type": "Property",
+                    "source": {
+                      "path": "code",
+                      "type": "Property",
+                      "source": {
+                        "path": "value",
+                        "type": "Property",
+                        "source": {
+                          "name": "Obs",
+                          "type": "OperandRef"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "path": "code",
+                    "type": "Property",
+                    "source": {
+                      "name": "/mm3",
+                      "type": "CodeRef"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Less",
+                "operand": [
+                  {
+                    "path": "value",
+                    "type": "Property",
+                    "source": {
+                      "path": "value",
+                      "type": "Property",
+                      "source": {
+                        "path": "value",
+                        "type": "Property",
+                        "source": {
+                          "name": "Obs",
+                          "type": "OperandRef"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "ToDecimal",
+                    "operand": {
+                      "valueType": "{urn:hl7-org:elm-types:r1}Integer",
+                      "value": "200",
+                      "type": "Literal"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "operand": [
+            {
+              "name": "Obs",
+              "operandTypeSpecifier": {
+                "name": "{http://hl7.org/fhir}Observation",
+                "type": "NamedTypeSpecifier"
+              }
+            }
+          ]
+        },
+        {
+          "name": "FindValidHivAidsCodesCount",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "type": "FunctionDef",
+          "expression": {
+            "type": "Query",
+            "source": [
+              {
+                "alias": "c",
+                "expression": {
+                  "name": "codes",
+                  "type": "OperandRef"
+                }
+              }
+            ],
+            "relationship": [],
+            "where": {
+              "type": "In",
+              "operand": [
+                {
+                  "name": "ToCode",
+                  "type": "FunctionRef",
+                  "operand": [
+                    {
+                      "name": "c",
+                      "type": "AliasRef"
+                    }
+                  ]
+                },
+                {
+                  "type": "Query",
+                  "source": [
+                    {
+                      "alias": "X",
+                      "expression": {
+                        "name": "HIV_AIDS_Quantity_Valuesets",
+                        "type": "ExpressionRef"
+                      }
+                    }
+                  ],
+                  "return": {
+                    "distinct": false,
+                    "expression": {
+                      "asType": "{urn:hl7-org:elm-types:r1}Code",
+                      "type": "As",
+                      "operand": {
+                        "name": "X",
+                        "type": "AliasRef"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "operand": [
+            {
+              "name": "codes",
+              "operandTypeSpecifier": {
+                "type": "ListTypeSpecifier",
+                "elementType": {
+                  "name": "{http://hl7.org/fhir}Coding",
+                  "type": "NamedTypeSpecifier"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "FindValidHivAidsObservationMeasurementPercent",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "type": "FunctionDef",
+          "expression": {
+            "type": "And",
+            "operand": [
+              {
+                "type": "Equal",
+                "operand": [
+                  {
+                    "path": "value",
+                    "type": "Property",
+                    "source": {
+                      "path": "code",
+                      "type": "Property",
+                      "source": {
+                        "path": "value",
+                        "type": "Property",
+                        "source": {
+                          "name": "Obs",
+                          "type": "OperandRef"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "path": "code",
+                    "type": "Property",
+                    "source": {
+                      "name": "%",
+                      "type": "CodeRef"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Less",
+                "operand": [
+                  {
+                    "path": "value",
+                    "type": "Property",
+                    "source": {
+                      "path": "value",
+                      "type": "Property",
+                      "source": {
+                        "path": "value",
+                        "type": "Property",
+                        "source": {
+                          "name": "Obs",
+                          "type": "OperandRef"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "ToDecimal",
+                    "operand": {
+                      "valueType": "{urn:hl7-org:elm-types:r1}Integer",
+                      "value": "15",
+                      "type": "Literal"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "operand": [
+            {
+              "name": "Obs",
+              "operandTypeSpecifier": {
+                "name": "{http://hl7.org/fhir}Observation",
+                "type": "NamedTypeSpecifier"
+              }
+            }
+          ]
+        },
+        {
+          "name": "FindValidHivAidsCodesPercent",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "type": "FunctionDef",
+          "expression": {
+            "type": "Query",
+            "source": [
+              {
+                "alias": "c",
+                "expression": {
+                  "name": "codes",
+                  "type": "OperandRef"
+                }
+              }
+            ],
+            "relationship": [],
+            "where": {
+              "type": "In",
+              "operand": [
+                {
+                  "name": "ToCode",
+                  "type": "FunctionRef",
+                  "operand": [
+                    {
+                      "name": "c",
+                      "type": "AliasRef"
+                    }
+                  ]
+                },
+                {
+                  "type": "Query",
+                  "source": [
+                    {
+                      "alias": "X",
+                      "expression": {
+                        "name": "HIV_AIDS_Percent_Valuesets",
+                        "type": "ExpressionRef"
+                      }
+                    }
+                  ],
+                  "return": {
+                    "distinct": false,
+                    "expression": {
+                      "asType": "{urn:hl7-org:elm-types:r1}Code",
+                      "type": "As",
+                      "operand": {
+                        "name": "X",
+                        "type": "AliasRef"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "operand": [
+            {
+              "name": "codes",
+              "operandTypeSpecifier": {
+                "type": "ListTypeSpecifier",
+                "elementType": {
+                  "name": "{http://hl7.org/fhir}Coding",
+                  "type": "NamedTypeSpecifier"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "FindValidHivAidsObservation",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "type": "FunctionDef",
+          "expression": {
+            "type": "Query",
+            "source": [
+              {
+                "alias": "Temp",
+                "expression": {
+                  "name": "Obs",
+                  "type": "OperandRef"
+                }
+              }
+            ],
+            "relationship": [],
+            "where": {
+              "type": "Or",
+              "operand": [
+                {
+                  "type": "And",
+                  "operand": [
+                    {
+                      "type": "Not",
+                      "operand": {
+                        "type": "IsNull",
+                        "operand": {
+                          "name": "FindValidHivAidsCodesCount",
+                          "type": "FunctionRef",
+                          "operand": [
+                            {
+                              "path": "coding",
+                              "type": "Property",
+                              "source": {
+                                "path": "code",
+                                "scope": "Temp",
+                                "type": "Property"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "name": "FindValidHivAidsObservationMeasurementQuantity",
+                      "type": "FunctionRef",
+                      "operand": [
+                        {
+                          "name": "Temp",
+                          "type": "AliasRef"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "And",
+                  "operand": [
+                    {
+                      "type": "Not",
+                      "operand": {
+                        "type": "IsNull",
+                        "operand": {
+                          "name": "FindValidHivAidsCodesPercent",
+                          "type": "FunctionRef",
+                          "operand": [
+                            {
+                              "path": "coding",
+                              "type": "Property",
+                              "source": {
+                                "path": "code",
+                                "scope": "Temp",
+                                "type": "Property"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "name": "FindValidHivAidsObservationMeasurementPercent",
+                      "type": "FunctionRef",
+                      "operand": [
+                        {
+                          "name": "Temp",
+                          "type": "AliasRef"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "operand": [
+            {
+              "name": "Obs",
+              "operandTypeSpecifier": {
+                "type": "ListTypeSpecifier",
+                "elementType": {
+                  "name": "{http://hl7.org/fhir}Observation",
+                  "type": "NamedTypeSpecifier"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "path": "MMR_Common_Library.cql"
+}

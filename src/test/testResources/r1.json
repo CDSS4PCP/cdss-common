@@ -1,0 +1,280 @@
+{
+  "library":
+  {
+    "annotation": [
+      {
+        "translatorVersion": "3.0.0-SNAPSHOT",
+        "translatorOptions": "",
+        "type": "CqlToElmInfo"
+      }
+    ],
+    "identifier": {
+      "id": "imm",
+      "version": "1"
+    },
+    "schemaIdentifier": {
+      "id": "urn:hl7-org:elm",
+      "version": "r1"
+    },
+    "usings": {
+      "def": [
+        {
+          "localIdentifier": "System",
+          "uri": "urn:hl7-org:elm-types:r1"
+        },
+        {
+          "localIdentifier": "FHIR",
+          "uri": "http://hl7.org/fhir",
+          "version": "4.0.1"
+        }
+      ]
+    },
+    "includes": {
+      "def": [
+        {
+          "localIdentifier": "FHIRHelpers",
+          "path": "FHIRHelpers",
+          "version": "4.0.1"
+        }
+      ]
+    },
+    "parameters": {
+      "def": [
+        {
+          "name": "Imm",
+          "accessLevel": "Public",
+          "parameterTypeSpecifier": {
+            "name": "{http://hl7.org/fhir}Immunization",
+            "type": "NamedTypeSpecifier"
+          }
+        }
+      ]
+    },
+    "codeSystems": {
+      "def": [
+        {
+          "name": "RXNORM",
+          "id": "http://www.nlm.nih.gov/research/umls/rxnorm",
+          "accessLevel": "Public"
+        }
+      ]
+    },
+    "codes": {
+      "def": [
+        {
+          "name": "mmr code",
+          "id": "7271275",
+          "display": "mmr",
+          "accessLevel": "Public",
+          "codeSystem": {
+            "name": "RXNORM"
+          }
+        }
+      ]
+    },
+    "contexts": {
+      "def": [
+        {
+          "name": "Patient"
+        }
+      ]
+    },
+    "statements": {
+      "def": [
+        {
+          "name": "Patient",
+          "context": "Patient",
+          "expression": {
+            "type": "SingletonFrom",
+            "operand": {
+              "dataType": "{http://hl7.org/fhir}Patient",
+              "templateId": "http://hl7.org/fhir/StructureDefinition/Patient",
+              "type": "Retrieve"
+            }
+          }
+        },
+        {
+          "name": "ToCode",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "type": "FunctionDef",
+          "expression": {
+            "classType": "{urn:hl7-org:elm-types:r1}Code",
+            "type": "Instance",
+            "element": [
+              {
+                "name": "code",
+                "value": {
+                  "path": "value",
+                  "type": "Property",
+                  "source": {
+                    "path": "code",
+                    "type": "Property",
+                    "source": {
+                      "name": "coding",
+                      "type": "OperandRef"
+                    }
+                  }
+                }
+              },
+              {
+                "name": "system",
+                "value": {
+                  "path": "value",
+                  "type": "Property",
+                  "source": {
+                    "path": "system",
+                    "type": "Property",
+                    "source": {
+                      "name": "coding",
+                      "type": "OperandRef"
+                    }
+                  }
+                }
+              },
+              {
+                "name": "version",
+                "value": {
+                  "path": "value",
+                  "type": "Property",
+                  "source": {
+                    "path": "version",
+                    "type": "Property",
+                    "source": {
+                      "name": "coding",
+                      "type": "OperandRef"
+                    }
+                  }
+                }
+              },
+              {
+                "name": "display",
+                "value": {
+                  "path": "value",
+                  "type": "Property",
+                  "source": {
+                    "path": "display",
+                    "type": "Property",
+                    "source": {
+                      "name": "coding",
+                      "type": "OperandRef"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "operand": [
+            {
+              "name": "coding",
+              "operandTypeSpecifier": {
+                "name": "{http://hl7.org/fhir}Coding",
+                "type": "NamedTypeSpecifier"
+              }
+            }
+          ]
+        },
+        {
+          "name": "GetVaccineCode",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "expression": {
+            "type": "Query",
+            "source": [
+              {
+                "alias": "P",
+                "expression": {
+                  "name": "Imm",
+                  "type": "ParameterRef"
+                }
+              }
+            ],
+            "relationship": [],
+            "return": {
+              "expression": {
+                "name": "ToCode",
+                "type": "FunctionRef",
+                "operand": [
+                  {
+                    "type": "Indexer",
+                    "operand": [
+                      {
+                        "path": "coding",
+                        "type": "Property",
+                        "source": {
+                          "path": "vaccineCode",
+                          "scope": "P",
+                          "type": "Property"
+                        }
+                      },
+                      {
+                        "valueType": "{urn:hl7-org:elm-types:r1}Integer",
+                        "value": "0",
+                        "type": "Literal"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "ProcessVaccineCode",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "expression": {
+            "type": "Query",
+            "source": [
+              {
+                "alias": "P",
+                "expression": {
+                  "name": "Imm",
+                  "type": "ParameterRef"
+                }
+              }
+            ],
+            "relationship": [],
+            "return": {
+              "expression": {
+                "type": "Equivalent",
+                "operand": [
+                  {
+                    "name": "GetVaccineCode",
+                    "type": "ExpressionRef"
+                  },
+                  {
+                    "name": "mmr code",
+                    "type": "CodeRef"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "InPopulation",
+          "context": "Patient",
+          "accessLevel": "Public",
+          "expression": {
+            "type": "If",
+            "condition": {
+              "name": "ProcessVaccineCode",
+              "type": "ExpressionRef"
+            },
+            "then": {
+              "valueType": "{urn:hl7-org:elm-types:r1}Boolean",
+              "value": "true",
+              "type": "Literal"
+            },
+            "else": {
+              "valueType": "{urn:hl7-org:elm-types:r1}Boolean",
+              "value": "false",
+              "type": "Literal"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
