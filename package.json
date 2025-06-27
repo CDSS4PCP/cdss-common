@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "browserfy-cql-exec-vsac": "git+https://github.com/sorliog/browserfy-cql-exec-vsac.git",
+    "browserfy-cql-exec-vsac": "git+https://github.com/CDSS4PCP/browserfy-cql-exec-vsac.git",
     "browserify-fs": "^1.0.0",
     "buffer": "^6.0.3",
     "cql-exec-fhir": "^2.1.5",

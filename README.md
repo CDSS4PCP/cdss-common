@@ -157,7 +157,7 @@ This module depends on the following libraries (also listed in `package.json`):
 | `unit.js` | JavaScript testing framework |
 
 > **Note:** `browserfy-cql-exec-vsac` is not published to NPM. Install from GitHub:
-[https://github.com/sorliog/browserfy-cql-exec-vsac](https://github.com/sorliog/browserfy-cql-exec-vsac)
+[https://github.com/CDSS4PCP/browserfy-cql-exec-vsac](https://github.com/CDSS4PCP/browserfy-cql-exec-vsac)
 
 ---
 
